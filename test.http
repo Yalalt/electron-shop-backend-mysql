@@ -1,19 +1,68 @@
-###
-
+### All products awah
 GET http://localhost:3008/products HTTP/1.1
 
-###
-GET http://localhost:3008/employee/?emp_no=10 HTTP/1.1
+### Products 10-iig awah
+GET http://localhost:3008/products/?prod_no=10 HTTP/1.1
 
-###
-
+### Product nemeh huselt
 POST http://localhost:3008/product HTTP/1.1
 Content-Type: application/json 
 
 { 
-"id": 3,
-"name":"iphone 16"
+"id": 4003,
+"name":"Acer Spin 3",
+"brandId": 2002,
+"categoryId": 1001,
+"desc": "Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.",
+"sale": "10",
+"price": 220.0,
+"stock": 12,
+"image": "https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg"
+}
+
+### Category nemeh huselt
+POST http://localhost:3008/category HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1004",
+    "name":"console"
 }
 
 
-###
+### User nemeh huselt
+POST http://localhost:3008/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 10002,
+    "name": "Lawrence",
+    "role": "client",
+    "password": "manager123",
+    "email": "ldymick1@kickstarter.com",
+    "contact": "(640) 1876281",
+    "address1": "67 Cardinal Park",
+    "address2": "United state",
+    "user_image": "none"
+}
+
+### specId, prodId, property, value,
+POST http://localhost:3008/specification HTTP/1.1
+Content-Type: application/json
+
+{
+    "specId": 3012,
+    "prodId": 4003,
+    "property": "RAM",
+    "value": "8GB DDR5"
+}
+
+### id, user_id, product_id  Wish List ADD
+POST http://localhost:3008/wishlist HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 5007,
+    "userId": 10002,
+    "prodId": 4001
+}

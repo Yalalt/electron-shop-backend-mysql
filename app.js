@@ -1,7 +1,7 @@
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
-import product_routes from "./routes/employee.js";
+import product_routes from "./routes/product.js";
 
 const app = express();
 const PORT = 3008;
