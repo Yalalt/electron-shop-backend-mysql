@@ -45,7 +45,11 @@ export async function createCategory(catId, catName) {
 }
 
 export async function createWishList(id, userId, prodId) {
-  await pool.query("INSERT INTO wishlist VALUES (?, ?, ?)", [id, userId, prodId]);
+  await pool.query("INSERT INTO wishlist VALUES (?, ?, ?)", [
+    id,
+    userId,
+    prodId,
+  ]);
 }
 
 export async function createSpecification(specId, prodId, property, value) {
@@ -68,7 +72,10 @@ export async function createUser(
   address2,
   userImage
 ) {
-  let registerDate = new Date().toISOString().slice(0, 10);
+  let registerDate = new Date()
+    .toISOString()
+    .slice(0, 10)
+    .concat(" ", new Date().toISOString().slice(11, 19));
   await pool.query("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [
     id,
     name,

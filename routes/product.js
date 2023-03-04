@@ -39,8 +39,8 @@ Router.post("/wishlist", async (req, res) => {
 
 Router.post("/user", async (req, res) => {
   console.log("User ADD 0_0 /");
-  usersTable.push(req.body);
   const regis = req.body;
+  usersTable.push(regis);
   // id, name, role, password, email, contact, address1, address2, userImage, registerDate
   await createUser(
     regis.id,
@@ -53,7 +53,6 @@ Router.post("/user", async (req, res) => {
     regis.address2,
     regis.user_image
   );
-  console.log(req.body);
   res.status(200).send(usersTable);
 });
 

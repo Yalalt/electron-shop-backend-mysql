@@ -109,7 +109,12 @@ INSERT INTO `product` (`id`, `name`, `brand_id`, `category_id`, `created_date`, 
 (4000, '4-Door Flex', 2000, 1000, '2023-03-03', 'Customize a Samsung Bespoke 3- or 4-door French door refrigerator or 4-Door Flex refrigerator with panels available in multiple colors and finishes.', '20', 1222, 12, 'https://image-us.samsung.com/SamsungUS/home/home-appliances/refrigerators/090321/rs22t5561sr/RS22T5561SR_01_SIlver_samsung.jpg?$product-details-jpg$'),
 (4001, 'HP Elitebook 840', 2001, 1001, '2023-03-03', 'An item that has been used previously. The item may have some signs of cosmetic wear, but is fully operational and functions as intended.', '0', 180, 23, 'https://i.ebayimg.com/images/g/E8wAAOSwO9Bjmd1t/s-l1600.jpg'),
 (4002, 'HP Probook 430', 2001, 1001, '2023-03-03', 'Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.', '15', 265, 4, 'https://i.ebayimg.com/images/g/F2oAAOSwbxBimCXu/s-l1600.jpg'),
-(4003, 'Acer Spin 3', 2002, 1001, '2023-03-03', 'Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.', '10', 220, 12, 'https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg');
+(4003, 'Acer Spin 3', 2002, 1001, '2023-03-03', 'Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery.', '10', 220, 12, 'https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg'),
+(4004, 'Macbook Pro M2 16C/512GB', 2003, 1001, '2023-03-04', 'SUPERCHARGED BY M2 PRO OR M2 MAX — Take on demanding projects with the M2 Pro or M2 Max chip.', '10', 1399, 8, 'https://m.media-amazon.com/images/I/61lYIKPieDL._AC_SX679_.jpg'),
+(4005, 'Surface Pro', 2013, 1002, '2023-03-04', 'Microsoft Surface Pro 9, 2-in-1 Tablet & Laptop, Intel 12th Gen i7 Fast Processor for Multi-Tasking, 16GB RAM, 256GB SSD.', '5', 1399, 4, 'https://m.media-amazon.com/images/I/51D3B+8L7DL._AC_SX679_.jpghttps://m.media-amazon.com/images/I/51D3B+8L7DL._AC_SX679_.jpg'),
+(4006, 'Samsung Galaxy Tab', 2000, 1002, '2023-03-04', 'SAMSUNG Galaxy Tab S8+ Android Tablet, Large AMOLED Screen, Ultra Wide Camera, S Pen Included, Long Lasting Battery, Graphite', '20', 1099, 3, 'https://m.media-amazon.com/images/I/81d74GHCPEL._AC_SX679_.jpg'),
+(4007, 'Apple IPad Pro 2022', 2003, 1002, '2023-03-04', '2022 Apple 12.9-inch iPad Pro (Wi-Fi, 128GB) - Space Gray (6th Generation)', '0', 1094, 3, 'https://m.media-amazon.com/images/I/81c+9BOQNWL._AC_SX679_.jpg'),
+(4008, 'MacBook Air Gold M1', 2003, 1001, '2023-03-04', 'Apple 2020 MacBook Air Laptop M1 Chip, 13 Retina Display, Backlit Keyboard, FaceTime HD Camera, Touch ID.', '0', 1099, 5, 'https://m.media-amazon.com/images/I/81HZAfCGZ5L._AC_SX679_.jpg');
 
 -- --------------------------------------------------------
 
@@ -141,7 +146,32 @@ INSERT INTO `specification` (`id`, `product_id`, `property`, `value`) VALUES
 (3009, 4003, 'Display', '14 inch'),
 (3010, 4003, 'CPU', 'i5-8250U 2,4 GHZ'),
 (3011, 4003, 'Hard', '512GB SSD'),
-(3012, 4003, 'RAM', '8GB DDR5');
+(3012, 4003, 'RAM', '8GB DDR5'),
+(3013, 4004, 'Screen size', '14.2 inches'),
+(3014, 4004, 'Color', 'Space gray'),
+(3015, 4005, 'CPU', 'Intel Evo i7-2640'),
+(3016, 4005, 'RAM', '16GB'),
+(3017, 4005, 'Memory Storage Capacity', '256GB'),
+(3018, 4005, 'Color', 'Forest'),
+(3019, 4005, 'Screen Size', '13 inches'),
+(3020, 4005, 'Graphics Coprocessor', 'Intel Iris Xe Graphics'),
+(3021, 4005, 'Network', 'WiFi 6E'),
+(3022, 4006, 'Memory Storage Capacity', '512GB'),
+(3023, 4006, 'Color', 'Graphite'),
+(3024, 4006, 'Screen Size', '12.4 inches'),
+(3025, 4006, 'Display Resolution', '2800 x 1752 pixels'),
+(3026, 4006, 'Network', 'WiFi 6E'),
+(3027, 4007, 'Memory Storage Capacity', '128GB'),
+(3028, 4007, 'Color', 'Space Gray'),
+(3029, 4007, 'Screen Size', '12.9 inches'),
+(3030, 4007, 'Display Resolution', '2732 x 2048 pixels'),
+(3031, 4007, 'Network', 'WiFi'),
+(3032, 4008, 'Model name', 'MacBook Air'),
+(3033, 4008, 'Screen Size', '13.6 incches'),
+(3034, 4008, 'Color', 'Gold'),
+(3035, 4008, 'Hard Disk Size', '256GB'),
+(3036, 4008, 'RAM', '8GB'),
+(3037, 4008, 'Graphics Coprocessor', 'Apple M1');
 
 -- --------------------------------------------------------
 
@@ -169,7 +199,11 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `role`, `password`, `email`, `contact`, `address1`, `address2`, `user_image`, `register_date`) VALUES
 (10000, 'Yalalt', 'admin', 'admin123', 'yalaltg@gmail.com', '9992-7888, 85061299', 'Bayangol 4th province 152A 503', 'Khanuul disctrict', 'none', '2023-03-03'),
 (10001, 'manager', 'moderator', 'manager123', 'tuulmanager@gmail.com', '94460357', 'Sukhbaatar district 123 43', 'Khanuul White hill 4021', 'none', '2023-03-03'),
-(10002, 'Lawrence', 'client', 'manager123', 'ldymick1@kickstarter.com', '(640) 1876281', '67 Cardinal Park', 'United state', 'none', '2023-03-03');
+(10002, 'Lawrence', 'client', 'manager123', 'ldymick1@kickstarter.com', '(640) 1876281', '67 Cardinal Park', 'United state', 'none', '2023-03-03'),
+(10003, 'Hana Chien', 'client', 'openopen123', 'hanachien@gmail.com', '(602) 8185234', '222 Mallory Center', 'Central Park', 'none', '2023-03-04'),
+(10004, 'Melisande Basezzi', 'client', 'asdasd123', 'mbasezzi4@reference.com', '(389) 3183472', '4 Novick Court', 'NYC DC', 'none', '2023-03-04'),
+(10005, 'Zara Melmore', 'client', 'asdasd123', 'zmelmore6@google.nl', '(796) 2901779', '16 Knutson Road', '8 Jana Parkway', 'none', '2023-03-04'),
+(10006, 'Rolfe Racine', 'client', '12345678', 'zmelmore6@google.nl', '(711) 23025259', '423 Milwaukee Plaza', 'Sun beach Parkway', 'none', '2023-03-04');
 
 -- --------------------------------------------------------
 
@@ -262,19 +296,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4004;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4009;
 
 --
 -- AUTO_INCREMENT for table `specification`
 --
 ALTER TABLE `specification`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3013;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3038;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10007;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
