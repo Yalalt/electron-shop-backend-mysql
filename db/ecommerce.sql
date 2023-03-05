@@ -308,7 +308,7 @@ ALTER TABLE `specification`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10007;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10008;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

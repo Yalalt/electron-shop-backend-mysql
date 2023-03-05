@@ -35,14 +35,14 @@ POST http://localhost:3008/user HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 10006,
-    "name": "Rolfe Racine",
-    "role": "client",
+    "id": 10007,
+    "name": "Michelle Choi ",
+    "role": "moderator",
     "password": "12345678",
-    "email": "zmelmore6@google.nl",
-    "contact": "(711) 23025259",
-    "address1": "423 Milwaukee Plaza",
-    "address2": "Sun beach Parkway",
+    "email": "michelle@gmail.com",
+    "contact": "(721) 887766889",
+    "address1": "123 NYC Grand Plaza",
+    "address2": "Sunny way",
     "user_image": "none"
 }
 
