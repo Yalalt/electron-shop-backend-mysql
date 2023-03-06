@@ -1,14 +1,15 @@
 import express from "express";
 import {
-  createSpecification
+  createSpecification, getSpecification
 } from "../services/prod-service.js";
 
 const router = express.Router();
 
 let specificationTable = [];
 
-router.get("/", (req, res) => {
-  res.send("GET request hariug butsaalaa. OK");
+router.get("/", async (req, res) => {
+  const result = await getSpecification();
+  res.send({status: "GET request hariug butsaalaa. OK", data: result});
 });
 
 router.post("/", async (req, res)=> {

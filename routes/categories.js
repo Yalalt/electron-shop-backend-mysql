@@ -1,14 +1,13 @@
 import express from "express";
-import {
-  createCategory
-} from "../services/prod-service.js";
+import { createCategory, getCategory } from "../services/prod-service.js";
 
 const router = express.Router();
 
 let category = [];
 
-router.get("/", (req, res) => {
-  res.send("GET request hariug butsaalaa. OK");
+router.get("/", async (req, res) => {
+  const result = await getCategory();
+  res.send({ status: "GET request hariug butsaalaa. OK", data: result });
 });
 
 router.post("/", async (req, res) => {

@@ -2,7 +2,7 @@ import { pool } from "../config/mysql-config.js";
 
 export async function getProducts(limit) {
   const [rows] = await pool.query(
-    `SELECT * FROM product limits ${limit || 10}`
+    `SELECT * FROM product limit ${limit || 10}`
   );
   return rows;
 }
@@ -44,12 +44,24 @@ export async function createCategory(catId, catName) {
   await pool.query("INSERT INTO category VALUES (?, ?)", [catId, catName]);
 }
 
+export async function getCategory() {
+  const [rows] = await pool.query("SELECT * FROM category");
+  return rows;
+}
+
+
+
 export async function createWishList(id, userId, prodId) {
   await pool.query("INSERT INTO wishlist VALUES (?, ?, ?)", [
     id,
     userId,
     prodId,
   ]);
+}
+
+export async function getWishList() {
+  const [rows] = await pool.query("SELECT * FROM wishlist");
+  return rows;
 }
 
 export async function createSpecification(specId, prodId, property, value) {
@@ -59,6 +71,26 @@ export async function createSpecification(specId, prodId, property, value) {
     property,
     value,
   ]);
+}
+
+export async function getSpecification() {
+  const [rows] = await pool.query("SELECT * FROM specification");
+  return rows;
+}
+
+export async function getUser() {
+  const [rows] = await pool.query("SELECT * FROM user");
+  return rows;
+}
+
+export async function getWishlistUserList(){
+  const [rows] = await pool.query("SELECT * FROM user RIGHT JOIN wishlist ON user.id = wishlist.user_id");
+  return rows;
+}
+
+export async function getMaxPriceComputers(){
+  const [rows] = await pool.query("SELECT * FROM product WHERE price=(SELECT MAX(price) FROM product INNER JOIN category ON product.category_id IN(SELECT id FROM category WHERE id = 1001))");
+  return rows;
 }
 
 export async function createUser(

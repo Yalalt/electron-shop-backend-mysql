@@ -1,15 +1,19 @@
 import express from "express";
 import {
   createProduct,
-  getProducts
+  getProducts,
+  getMaxPriceComputers,
 } from "../services/prod-service.js";
 
 const router = express.Router();
 
-let productsTable = [];
-
-router.get("/", (req, res) => {
-  res.send("GET request hariug butsaalaa. OK");
+router.get("/", async (req, res) => {
+  console.log("All Product Huselt orj irlee");
+  const rresult = await getProducts();
+  res.send({
+    status: "GET All Product request hariug butsaalaa. OK",
+    data: rresult,
+  });
 });
 
 router.get("/?", async (req, res) => {
@@ -17,6 +21,11 @@ router.get("/?", async (req, res) => {
   const { query } = req;
   const result = await getProducts(query.prod_no);
   res.status(200).send(result);
+});
+
+router.get("/maxprcprod", async (req, res) => {
+  const result = await getMaxPriceComputers();
+  res.send({status: "Max price computers list send successfull", data: result});
 });
 
 router.post("/", async (req, res) => {

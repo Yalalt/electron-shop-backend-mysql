@@ -1,8 +1,34 @@
 ### All products awah
-GET http://localhost:3008/products HTTP/1.1
+GET http://localhost:3008/product HTTP/1.1
+
+
+### MAX Computer products awah
+GET http://localhost:3008/product/maxprcprod HTTP/1.1
+
 
 ### Products 10-iig awah
-GET http://localhost:3008/products/?prod_no=10 HTTP/1.1
+GET http://localhost:3008/product/?prod_no=10 HTTP/1.1
+
+
+### All category awah
+GET http://localhost:3008/category HTTP/1.1
+
+
+### Wish List View
+GET http://localhost:3008/wishlist HTTP/1.1
+
+
+### Users data View
+GET http://localhost:3008/user HTTP/1.1
+
+
+### VIEW Wishlist get users
+GET http://localhost:3008/user/uwl HTTP/1.1
+
+
+### Specification data View
+GET http://localhost:3008/specification HTTP/1.1
+
 
 ### Product nemeh huselt
 POST http://localhost:3008/product HTTP/1.1
@@ -56,6 +82,8 @@ Content-Type: application/json
     "property": "Graphics Coprocessor",
     "value": "Apple M1"
 }
+
+
 
 ### Wish List ADD
 POST http://localhost:3008/wishlist HTTP/1.1

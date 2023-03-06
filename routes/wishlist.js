@@ -1,14 +1,15 @@
 import express from "express";
 import {
-  createWishList  
+  createWishList, getWishList  
 } from "../services/prod-service.js";
 
 const router = express.Router();
 
 let wishlistTbl = [];
 
-router.get("/", (req, res) => {
-  res.send("GET request hariug butsaalaa. OK");
+router.get("/", async (req, res) => {
+  const result = await getWishList();
+  res.send({status: "GET request hariug butsaalaa. OK", data: result});
 });
 
 
