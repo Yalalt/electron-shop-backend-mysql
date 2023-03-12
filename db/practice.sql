@@ -193,3 +193,47 @@ FROM (
 
 -- 18
 
+SELECT AVG(buyPrice) averagePrice FROM products p2;
+
+
+SELECT * FROM products p1 WHERE buyPrice > (SELECT AVG(buyPrice) averagePrice FROM products);
+
+use classicmodels;
+
+SELECT p1.* FROM products p1 JOIN (SELECT AVG(buyPrice) average FROM products) p2 ON p1.buyPrice > p2.average;
+
+
+--- 19
+
+SELECT p1.* FROM products p1 JOIN (SELECT MAX(quantityInStock) maxInStock FROM products) p2 ON p1.quantityInStock >= p2.maxInStock;
+
+--- 20
+
+SELECT
+    *
+FROM
+    products pr1
+    JOIN (
+        SELECT
+            productCode,
+            quantityOrdered,
+            priceEach
+        FROM
+            orderdetails Od1
+            JOIN (
+                SELECT
+                    orderNumber
+                FROM
+                    orders O1
+                    JOIN (
+                        SELECT
+                            customerNumber
+                        FROM
+                            customers
+                        ORDER BY
+                            RAND()
+                        limit
+                            1
+                    ) Cus ON O1.customerNumber = Cus.customerNumber
+            ) Od2 ON Od1.orderNumber = Od2.orderNumber
+    ) pr2 ON pr1.productCode = pr2.productCode;
