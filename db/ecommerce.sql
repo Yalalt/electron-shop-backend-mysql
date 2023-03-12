@@ -76,11 +76,11 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1000, 'appliances'),
-(1001, 'computers'),
-(1002, 'tablets'),
-(1003, 'electronics'),
-(1004, 'console');
+(1000, 'Appliances'),
+(1001, 'Computers'),
+(1002, 'Tablets'),
+(1003, 'Electronics'),
+(1004, 'Console');
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,8 @@ INSERT INTO `user` (`id`, `name`, `role`, `password`, `email`, `contact`, `addre
 (10003, 'Hana Chien', 'client', 'openopen123', 'hanachien@gmail.com', '(602) 8185234', '222 Mallory Center', 'Central Park', 'none', '2023-03-04'),
 (10004, 'Melisande Basezzi', 'client', 'asdasd123', 'mbasezzi4@reference.com', '(389) 3183472', '4 Novick Court', 'NYC DC', 'none', '2023-03-04'),
 (10005, 'Zara Melmore', 'client', 'asdasd123', 'zmelmore6@google.nl', '(796) 2901779', '16 Knutson Road', '8 Jana Parkway', 'none', '2023-03-04'),
-(10006, 'Rolfe Racine', 'client', '12345678', 'zmelmore6@google.nl', '(711) 23025259', '423 Milwaukee Plaza', 'Sun beach Parkway', 'none', '2023-03-04');
+(10006, 'Rolfe Racine', 'client', '12345678', 'zmelmore6@google.nl', '(711) 23025259', '423 Milwaukee Plaza', 'Sun beach Parkway', 'none', '2023-03-04'),
+(10007, 'Michelle Choi ', 'moderator', '12345678', 'michelle@gmail.com', '(721) 887766889', '123 NYC Grand Plaza', 'Sunny way', 'none', '2023-03-05');
 
 -- --------------------------------------------------------
 

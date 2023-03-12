@@ -1,42 +1,20 @@
 import express from "express";
 import {
-    createUser, getUser, getWishlistUserList
-  } from "../services/prod-service.js";
+  getAll,
+  create,
+  getUsersLimits,
+  getUserWishlist,
+  getUser,
+  deleteUser,
+} from "../controller/user.controller.js";
 
-  const router = express.Router();
+const router = express.Router();
 
-  let usersTable = [];
-  
-  router.get('/', async (req, res) => {
-    const result = await getUser();
-    res.send({status: "Successfull send user data", data: result});
-  });
+router.get("/user", getAll);
+router.get("/user/:id", getUser);
+router.get("/user/limit?", getUsersLimits);
+router.get("/user/uwl/:id", getUserWishlist);
+router.post("/user", create);
+router.delete("/user/:id", deleteUser);
 
-  router.get('/uwl', async (req, res) => {
-    const result = await getUser();
-    res.send({status: "Successfull RIGHT JOIN send with wish list user data", data: result});
-  });
-
-
-
-  router.post("/", async (req, res) => {
-    console.log("User ADD 0_0 /");
-    const regis = req.body;
-    usersTable.push(regis);
-    // id, name, role, password, email, contact, address1, address2, userImage, registerDate
-    await createUser(
-      regis.id,
-      regis.name,
-      regis.role,
-      regis.password,
-      regis.email,
-      regis.contact,
-      regis.address1,
-      regis.address2,
-      regis.user_image
-    );
-    res.status(200).send(usersTable);
-  });
-  
-  export default router;
-  
+export default router;
