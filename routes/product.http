@@ -1,25 +1,25 @@
 ### All products awah
-GET http://localhost:3008/api/product HTTP/1.1
+GET http://localhost:9000/api/product HTTP/1.1
 
 
 ### MAX Price Computer products awah
-GET http://localhost:3008/api/product/maxprcprod HTTP/1.1
+GET http://localhost:9000/api/product/maxprcprod HTTP/1.1
 
 
 ### Products Toogoor awah
-GET http://localhost:3008/api/product/limit?prod_no=3 HTTP/1.1
+GET http://localhost:9000/api/product/limit?prod_no=3 HTTP/1.1
 
 
 ### Products brandeer awah
-GET http://localhost:3008/api/product/brand/?name=2003 HTTP/1.1
+GET http://localhost:9000/api/product/brand/?name=2003 HTTP/1.1
 
 
 ### Products categorooor awah
-GET http://localhost:3008/api/product/category/?name=1001 HTTP/1.1
+GET http://localhost:9000/api/product/category/?name=1001 HTTP/1.1
 
 
 ### Products ID gaar awah
-GET http://localhost:3008/api/product/4005 HTTP/1.1
+GET http://localhost:9000/api/product/4005 HTTP/1.1
 
 ###
 DELETE http://localhost:9000/api/product/1
@@ -27,7 +27,7 @@ Content-Type: application/json
 
 
 ### Product nemeh huselt
-POST http://localhost:3008/api/product HTTP/1.1
+POST http://localhost:9000/api/product HTTP/1.1
 Content-Type: application/json 
 
 { 

@@ -9,6 +9,7 @@ import {
   getProductsLimit,
 } from "../model/product-service.js";
 
+
 export const getOne = async (req, res) => {
   const { id } = req.params;
   if (!id) return res.json({ status: false, message: "Id could not found" });
